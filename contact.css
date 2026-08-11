@@ -1,0 +1,154 @@
+#contact.content.active{
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.contact-info h2 {
+    font-size: 2.5rem;
+}
+
+.contact-info h2 span{
+    color: var(--red);
+}
+
+.contact-info p {
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.contact-media{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.media{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.media span {
+    background-color: var(--disabled);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.media i {
+    font-size: 2rem;
+    color: var(--red);
+}
+
+.contact-value{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.contact-value p{
+    color: var(--red);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.contact-value a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all linear 0.3s;
+}
+
+.contact-value a:hover {
+    color: rgb(174, 228, 243);
+    text-decoration: underline;
+}
+
+form{
+    background: var(--disabled);
+    padding: 1rem ;
+    border-radius: 10px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+    border: none;
+}
+
+legend{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+legend span {
+    color: var(--red);
+}
+
+label{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.fields{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.fields div{
+    display: grid;
+    gap: 1rem;
+}
+
+input , textarea{
+    background: var(--disabled);
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 0.7rem;
+    border-radius: 5px;
+    color: var(--white);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--white);
+    opacity: 0.6;
+}
+
+#sent-msg {
+    margin: 1rem auto;
+}
+
+@media screen and (width>=768px){
+    #contact.content.active{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+
+@media screen and (width>=1024px){
+    .contact-media{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .fields {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fields div:last-child{
+        grid-column: span 2;
+    }
+}

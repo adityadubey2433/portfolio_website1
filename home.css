@@ -1,0 +1,243 @@
+#home.content.active {
+    display:flex;
+    flex-direction: column-reverse;
+    align-items:center;
+    width:90%;
+    max-width:700px;
+    margin:2rem auto;
+    gap: 3rem;
+}
+
+.img-container {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-container::before,
+.img-container::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        var(--red)
+    );
+    animation: revolve 4s linear infinite;
+}
+
+.img-container::after{
+    animation-delay: 2s;
+}
+
+@keyframes revolve {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.img-container img {
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+    border-radius: 50%;
+    object-fit:cover;
+    z-index: 2;
+}
+
+.details{
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     max-width: 500px;
+}
+
+.details h2 {
+    font-size: 2.5rem;
+}
+
+.details h2 span {
+    background: linear-gradient(to right, var(--red), var(--white));
+    padding: 2px;
+    border-bottom: 5px solid var(--red);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.details h3 {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.details h3 span {
+    color: var(--red);
+    display: inline-block;
+    min-width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.details h3 span::after {
+    content: '|';
+    margin-left: 5px;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+    0% , 100%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.details p {
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.btn {
+    width: 12rem;
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 5px;
+    background: var(--red);
+    cursor: pointer;
+    border: none;
+    transition: all ease 0.3s;
+}
+
+.btn:hover{
+    box-shadow: 3px 3px 3px var(--red),-3px 3px 3px var(--red),3px -3px 3px var(--red),-3px -3px 3px var(--red);
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--white);
+}
+
+.social-icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.social-icon a {
+   text-decoration: none;
+   color: var(--red);
+   border: 2px solid var(--red);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   overflow: hidden;
+   width: 45px;
+   height: 45px;
+   transition: all ease 0.3s;
+}
+
+
+
+.social-icon a i{
+    font-size: 1.5rem;
+}
+
+.social-icon a:hover{
+    color: var(--primary);
+    background: var(--red);
+    box-shadow: 2px 2px 2px var(--red),-2px 2px 2px var(--red),2px -2px 2px var(--red),-2px -2px 2px var(--red);
+    
+}
+
+@media screen and (width >= 768px) {
+    #home.content.active {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        gap: 3.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .details h2 {
+        font-size: 3rem;
+    }
+
+    .details h3 {
+        font-size: 2.5rem;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+    }
+
+    .bottom{
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .btn {
+        border-radius: 50px;
+    }
+}
+
+@media screen  and (width >= 1024px){
+    #home.content.active {
+        margin: 3rem auto;
+    }
+
+    .img-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .details {
+        gap: 30px;
+    }
+
+    .details h2 {
+        font-size: 3.5rem;
+    }
+
+    .details h3 {
+        font-size: 2.8rem;
+    }
+
+    .details p {
+        font-size: 1.6rem;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+    }
+
+    .bottom{
+        flex-direction: row;
+    }
+    
+    .bottom button {
+        border-radius: 50px;
+    }
+}  

@@ -1,0 +1,270 @@
+#about.content.active{
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.sidebar h3 {
+    font-size: 2rem;
+}
+
+.sidebar p{
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.sidebar .tabs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar .tabs span {
+    border: 2px solid transparent;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 5px;
+    background: var(--secondary);
+    transition: all linear 0.3s;
+}
+
+.sidebar .tabs span:hover{
+    border-color: var(--red);
+    cursor: pointer;
+    color: var(--red);
+}
+
+/* .tab {
+    border: 2px solid transparent;
+    cursor: pointer;
+} */
+
+.tab.active {
+    border: 2px solid var(--red) !important;
+    color: var(--red);
+}
+
+.tab-content{
+    display: none;
+}
+
+.tab-content.active {
+    display: inline-flex;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tab-content.active p {
+    text-align: justify;
+}
+
+aside h2{
+    font-size: 2rem;
+}
+
+aside h2 span{
+    color: var(--red);
+}
+
+.experience-list, .education-list, .my-info{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    overflow: auto;
+    max-height: 300px;
+    padding: 1rem;
+}
+
+.education-list::-webkit-scrollbar{
+    width: 5px;
+}
+
+.my-info::-webkit-scrollbar{
+    width: 5px;
+}
+
+.my-info::-webkit-scrollbar-thumb{
+    background: var(--red);
+    border-radius: 10px;
+}
+
+.education-list::-webkit-scrollbar-thumb{
+    background: var(--red);
+    border-radius: 10px;
+}
+
+.skill-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 1rem;
+}
+
+
+.experience-list::-webkit-scrollbar,
+.skill-list::-webkit-scrollbar{
+    width: 5px;
+}
+
+.experience-list::-webkit-scrollbar-thumb,
+.skill-list::-webkit-scrollbar-thumb{
+    background: var(--red);
+    border-radius: 10px;
+}
+
+.experience-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 2px solid transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--secondary);
+    transition: all linear 0.3s;
+}
+
+.experience-box:hover{
+    border-color: var(--red);
+    box-shadow: 5px 5px 5px var(--red), -5px 5px 5px var(--red), 5px -5px 5px var(--red), -5px -5px 5px var(--red);
+}
+
+.skill-box:hover{ border-color: var(--red);
+    box-shadow: 5px 5px 5px var(--red), -5px 5px 5px var(--red), 5px -5px 5px var(--red), -5px -5px 5px var(--red);
+}
+
+.experience-box h4{
+    font-size: 1.4rem;
+}
+
+.experience-box h3 {
+    font-size: 1.3rem;
+    color: var(--red);
+}
+
+.experience-box p {
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.company-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.company-name span {
+    border: 6px solid var(--red);
+    border-radius: 50%;
+}
+
+.company-name p {
+    font-size: 1rem;
+}
+
+.skill-box{
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--disabled);
+    background: var(--disabled);
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+
+.skill-box img{
+    width: 4rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.my-info{
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.info-box {
+    display: grid;
+    /* grid-template-columns: subgrid; */
+}
+
+.info-box span:first-child{
+    color: var(--red);
+}
+
+@media screen and (width >= 768px) {
+
+    #about.content.active {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 3rem;
+        box-sizing: border-box;
+    }
+
+    #about .sidebar {
+        width: 100%;
+        max-width: none;
+        grid-column: span 3;
+    }
+
+    #about .sidebar .tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #about .tab-content.active {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        grid-column: span 4;
+        box-sizing: border-box;
+    }
+
+    .skill-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .my-info{
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1.7rem;
+        gap: 2rem 3rem;
+    }
+}
+
+@media screen and (width >= 1024px) {
+    #about .tab-content.active {
+        gap: 3rem;
+    }
+
+    .experience-box h3 {
+        font-size: 1.8rem;
+    }
+
+}
